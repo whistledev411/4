@@ -13,4 +13,7 @@ export const SLIPPAGE = Number(retrieveEnvVariable('SLIPPAGE', logger))
 
 export const TARGET_ID =  retrieveEnvVariable('TARGET_ID', logger);
 export const TWITTER_TOKEN = retrieveEnvVariable('TWITTER_TOKEN', logger);
-
+export const TWITTER_APP_KEY = retrieveEnvVariable('TWITTER_APP_KEY', logger);
+export const TWITTER_APP_SECRET = retrieveEnvVariable('TWITTER_APP_SECRET', logger);
+export const TWITTER_ACCESS_TOKEN = retrieveEnvVariable('TWITTER_ACCESS_TOKEN', logger);
+export const TWITTER_ACCESS_SECRET = retrieveEnvVariable('TWITTER_ACCESS_SECRET', logger);
