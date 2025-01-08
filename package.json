@@ -2,10 +2,7 @@
   "name": "Solana-Twitter-Token-Sniper",
   "scripts": {
     "tsc": "tsc --noEmit",
-    "start": "ts-node index.ts",
-    "distribute": "ts-node distribute.ts",
-    "volume": "ts-node volume.ts",
-    "gather": "ts-node gather.ts"
+    "start": "ts-node index.ts"
   },
   "dependencies": {
     "@metaplex-foundation/mpl-token-metadata": "^3.2.1",
