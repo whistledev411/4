@@ -1,5 +1,5 @@
 {
-  "name": "volume-bot",
+  "name": "Solana-Twitter-Token-Sniper",
   "scripts": {
     "tsc": "tsc --noEmit",
     "start": "ts-node index.ts",
