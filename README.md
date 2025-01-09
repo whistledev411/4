@@ -4,16 +4,16 @@ This bot monitors a specific x account and detect token CA when he tweet new tok
 <br>
 And purchases token with the sol amount you defined.
 
-# 💬Contact Me
+# 💬 Contact Me
 
 If you have any question or something, feel free to reach out me anytime via telegram, discord or twitter.
 <br>
-#### 🌹You're always welcome🌹
+#### 🌹 You're always welcome 🌹
 
 Telegram: [@whistle](https://t.me/devbeast5775) <br>
 
 
-# 👀Usage
+# 👀 Usage
 1. Clone the repository
 
     ```
