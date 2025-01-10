@@ -1,6 +1,6 @@
-# 🤖 Twitter Solana Token Sniper 
+# 🤖 Twitter Solana Token Sniper Bot
 
-This bot monitors a specific x account and detect token CA when he tweet new token CA.
+Twitter Solana Token Sniper Bot monitors a specific x account and detect token CA when he tweet new token CA.
 <br>
 And purchases token with the sol amount you defined.
 
