@@ -36,44 +36,6 @@ const getUserId = async (user_id: string) => {
 }
 
 
-const buy = async (newWallet: Keypair, baseMint: PublicKey, buyAmount: number) => {
-    let solBalance: number = 0
-    try {
-        solBalance = await solanaConnection.getBalance(newWallet.publicKey)
-    } catch (error) {
-        console.log("Error getting balance of wallet")
-        return null
-    }
-    if (solBalance == 0) {
-        console.log("Please check your sol balance!")
-        return null
-    }
-    try {
-        let buyTx = await getBuyTxWithJupiter(newWallet, baseMint, buyAmount)
-        if (buyTx == null) {
-            console.log(`Error getting buy transaction`)
-            return null
-        }
-        // console.log(await solanaConnection.simulateTransaction(buyTx))
-        let txSig
-        if (JITO_MODE) {
-            txSig = await executeJitoTx([buyTx], mainKp, jitoCommitment)
-        } else {
-            const latestBlockhash = await solanaConnection.getLatestBlockhash()
-            txSig = await execute(buyTx, latestBlockhash, 1)
-        }
-        if (txSig) {
-            const tokenBuyTx = txSig ? `https://solscan.io/tx/${txSig}` : ''
-            console.log("Success in buy transaction: ", tokenBuyTx)
-            return tokenBuyTx
-        } else {
-            return null
-        }
-    } catch (error) {
-        return null
-    }
-}
-
 const main = async (target_id: string) => {
     try {
         const query = `from:${target_id} ("ca" OR "ca:" OR "ca;")`;
@@ -107,14 +69,8 @@ const main = async (target_id: string) => {
 
             if (match) {
                 // match[1] contains the text following "Ca"
-                console.log("Text after 'Ca':", match[1]);
-                const mint = new PublicKey(match[1]);
-                const result = await buy(mainKp, mint, BUY_AMOUNT);
-                if (result) {
-                    console.log('Successfully Done!');
-                } else {
-                    console.log('Unexpected issue! Please check your config and try again!')   
-                }
+                console.log("New Token Detected 'Ca':", match[1]);
+                
                 process.exit(1);
             } else {
                 console.log("No match found.");
